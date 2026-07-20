@@ -504,6 +504,11 @@
     }
     .pv-iot   { background: linear-gradient(135deg, #0d1b4e 0%, #1e1545 50%, #2d1b5e 100%); }
     .pv-cloud { background: linear-gradient(135deg, #1a0d2e 0%, #0e1535 50%, #1e2045 100%); }
+    .pv-fixme { background: linear-gradient(135deg, #12102e 0%, #241a4a 50%, #1a0d2e 100%); }
+    .pv-chat   { background: linear-gradient(135deg, #0f1b3a 0%, #1a1550 50%, #2a1b52 100%); }
+    .pv-pong   { background: linear-gradient(135deg, #1b0d3a 0%, #23145a 50%, #150a35 100%); }
+    .pv-log    { background: linear-gradient(135deg, #101030 0%, #1d1348 50%, #241a4a 100%); }
+    .pv-devops { background: linear-gradient(135deg, #0d1430 0%, #191345 50%, #1e1040 100%); }
     .pv-more  { background: rgba(30,21,69,.18); border-bottom: 1px dashed rgba(124,58,237,.2); }
 
     .pv-icon {
@@ -799,7 +804,7 @@
           <div class="about-divider"></div>
           <p class="about-body">
             I believe simplicity is the ultimate sophistication. Whether I'm architecting a
-            multi-container infrastructure or designing a Spring Boot backend, I bring the same
+            multi-container infrastructure or designing a Spring/Spring Boot backend, I bring the same
             obsessive attention to detail. I'm currently deepening my expertise in DevOps,
             cloud-native architectures, and the ever-evolving intersection of software and infrastructure.
           </p>
@@ -970,22 +975,23 @@
             <i class="bi bi-hdd-network-fill pv-icon"></i>
           </div>
           <div class="proj-body">
-            <div class="proj-num">01 / 03</div>
-            <h3 class="proj-title">Inception of Things</h3>
+            <div class="proj-num">01 / 08</div>
+            <h3 class="proj-title">Kubernetes Infrastructure &amp; Container Orchestration</h3>
             <p class="proj-desc">
-              A complete Kubernetes infrastructure built from scratch using K3s, K3d, and Vagrant.
-              Configured server/worker node architecture, Ingress routing for three simultaneous
-              applications, and a fully automated GitOps CI/CD pipeline powered by Argo CD
-              syncing from a public GitHub repository.
+              Built a lightweight Kubernetes (K3s) cluster with controller and worker nodes
+              provisioned through Vagrant, and deployed containerized applications with
+              kubectl. Configured Ingress to route traffic to multiple applications based
+              on hostname, and used Kubernetes replicas to keep deployments available.
+              Completed as part of a group project.
             </p>
           </div>
           <div class="proj-footer">
             <div class="tech-stack">
               <span class="tech-badge">K3s</span>
-              <span class="tech-badge">K3d</span>
               <span class="tech-badge">Vagrant</span>
-              <span class="tech-badge">Argo CD</span>
-              <span class="tech-badge">Docker</span>
+              <span class="tech-badge">kubectl</span>
+              <span class="tech-badge">Ingress</span>
+              <span class="tech-badge">Kubernetes</span>
             </div>
             <a href="#" class="proj-link"><i class="bi bi-arrow-up-right"></i></a>
           </div>
@@ -1009,13 +1015,15 @@
             <i class="bi bi-cloud-arrow-up-fill pv-icon"></i>
           </div>
           <div class="proj-body">
-            <div class="proj-num">02 / 03</div>
-            <h3 class="proj-title">Cloud-1</h3>
+            <div class="proj-num">02 / 08</div>
+            <h3 class="proj-title">Cloud Infrastructure Automation</h3>
             <p class="proj-desc">
-              Fully automated cloud deployment of a multi-container WordPress stack on a remote
-              server instance. Built with Ansible for orchestration, featuring NGINX as a reverse
-              proxy, TLS encryption, persistent Docker volumes, and parallel deployment capability
-              across multiple servers from a single playbook run.
+              Automated the deployment of a multi-container WordPress infrastructure on a
+              remote cloud server using Ansible, provisioning isolated containers for
+              WordPress, MySQL, and phpMyAdmin following a one-process-per-container
+              architecture. Configured persistent storage and automatic service recovery,
+              and secured the infrastructure by restricting direct database access and
+              enabling TLS for HTTPS.
             </p>
           </div>
           <div class="proj-footer">
@@ -1030,25 +1038,192 @@
           </div>
         </div>
 
-        <!-- More projects teaser -->
-        <div class="project-card reveal reveal-d3" style="border-style:dashed; background:rgba(30,21,69,.12);">
-          <div class="project-visual pv-more">
-            <i class="bi bi-plus-circle pv-icon" style="opacity:.28;"></i>
+        <!-- Fixme -->
+        <div class="project-card reveal reveal-d3">
+          <div class="project-visual pv-fixme">
+            <!-- hub-and-spoke network SVG -->
+            <svg class="pv-svg" viewBox="0 0 400 175" fill="none">
+              <circle cx="200" cy="88" r="9" fill="#a78bfa" opacity=".7"/>
+              <circle cx="80"  cy="45" r="6" fill="#a78bfa" opacity=".55"/>
+              <circle cx="320" cy="45" r="6" fill="#a78bfa" opacity=".55"/>
+              <circle cx="80"  cy="130" r="6" fill="#a78bfa" opacity=".5"/>
+              <circle cx="320" cy="130" r="6" fill="#a78bfa" opacity=".5"/>
+              <line x1="200" y1="88" x2="80"  y2="45"  stroke="#a78bfa" stroke-width=".7" opacity=".35"/>
+              <line x1="200" y1="88" x2="320" y2="45"  stroke="#a78bfa" stroke-width=".7" opacity=".35"/>
+              <line x1="200" y1="88" x2="80"  y2="130" stroke="#a78bfa" stroke-width=".7" opacity=".3"/>
+              <line x1="200" y1="88" x2="320" y2="130" stroke="#a78bfa" stroke-width=".7" opacity=".3"/>
+            </svg>
+            <i class="bi bi-diagram-3-fill pv-icon"></i>
           </div>
           <div class="proj-body">
-            <div class="proj-num" style="opacity:.4;">Other projects</div>
-            <h3 class="proj-title" style="opacity:.65;">More coming soon</h3>
-            <p class="proj-desc" style="opacity:.5;">
-              Real-time Java chat application, full-stack Pong web app with OAuth &amp; 2FA,
-              CLI log analyzer, and DevOps infrastructure, all documented and in progress.
+            <div class="proj-num">03 / 08</div>
+            <h3 class="proj-title">Fixme</h3>
+            <p class="proj-desc">
+              A distributed messaging platform simulating market connectivity, built from three
+              independent Java components (Router, Broker, Market) communicating over TCP with
+              non-blocking sockets and the Java Executor framework. The router assigns unique IDs,
+              validates message checksums, and dispatches FIX-formatted messages using the
+              Chain-of-Responsibility pattern. Extended with a database-backed transaction log and
+              a failover mechanism to recover in-progress transactions if a component goes down.
             </p>
           </div>
           <div class="proj-footer">
             <div class="tech-stack">
-              <span class="tech-badge" style="opacity:.45;">Java</span>
-              <span class="tech-badge" style="opacity:.45;">React</span>
-              <span class="tech-badge" style="opacity:.45;">NestJS</span>
+              <span class="tech-badge">Java</span>
+              <span class="tech-badge">Non-blocking I/O</span>
+              <span class="tech-badge">Executor Framework</span>
+              <span class="tech-badge">Maven</span>
+              <span class="tech-badge">PostgreSQL</span>
             </div>
+            <a href="#" class="proj-link"><i class="bi bi-arrow-up-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Real-time Chat Application -->
+        <div class="project-card reveal reveal-d1">
+          <div class="project-visual pv-chat">
+            <svg class="pv-svg" viewBox="0 0 400 175" fill="none">
+              <circle cx="110" cy="70"  r="7" fill="#a78bfa" opacity=".6"/>
+              <circle cx="290" cy="70"  r="7" fill="#a78bfa" opacity=".6"/>
+              <circle cx="200" cy="120" r="9" fill="#a78bfa" opacity=".7"/>
+              <line x1="110" y1="70" x2="200" y2="120" stroke="#a78bfa" stroke-width=".7" opacity=".35"/>
+              <line x1="290" y1="70" x2="200" y2="120" stroke="#a78bfa" stroke-width=".7" opacity=".35"/>
+              <line x1="110" y1="70" x2="290" y2="70"  stroke="#a78bfa" stroke-width=".5" opacity=".2"/>
+            </svg>
+            <i class="bi bi-chat-dots-fill pv-icon"></i>
+          </div>
+          <div class="proj-body">
+            <div class="proj-num">04 / 08</div>
+            <h3 class="proj-title">Real-time Chat Application</h3>
+            <p class="proj-desc">
+              A multi-threaded client-server chat application built with Java Sockets for
+              real-time messaging. Implements secure sign-up and login with BCrypt password
+              hashing, and connects to PostgreSQL through Spring JDBC and HikariCP. A
+              JSON-based protocol handles broadcasting and many simultaneous users.
+            </p>
+          </div>
+          <div class="proj-footer">
+            <div class="tech-stack">
+              <span class="tech-badge">Java</span>
+              <span class="tech-badge">Sockets</span>
+              <span class="tech-badge">Spring JDBC</span>
+              <span class="tech-badge">PostgreSQL</span>
+              <span class="tech-badge">BCrypt</span>
+            </div>
+            <a href="#" class="proj-link"><i class="bi bi-arrow-up-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Pong Web App -->
+        <div class="project-card reveal reveal-d2">
+          <div class="project-visual pv-pong">
+            <svg class="pv-svg" viewBox="0 0 400 175" fill="none">
+              <rect x="40"  y="55" width="10" height="55" rx="3" fill="#a78bfa" opacity=".5"/>
+              <rect x="350" y="65" width="10" height="55" rx="3" fill="#a78bfa" opacity=".5"/>
+              <circle cx="200" cy="88" r="6" fill="#a78bfa" opacity=".65"/>
+              <line x1="200" y1="20" x2="200" y2="155" stroke="#a78bfa" stroke-width=".5" opacity=".18" stroke-dasharray="4 6"/>
+            </svg>
+            <i class="bi bi-controller pv-icon"></i>
+          </div>
+          <div class="proj-body">
+            <div class="proj-num">05 / 08</div>
+            <h3 class="proj-title">Pong Web App <span style="opacity:.5; font-size:.7em; font-weight:400;">· Group Project</span></h3>
+            <p class="proj-desc">
+              A real-time multiplayer Pong web app where users can play and chat live.
+              Secured with OAuth login and Two-Factor Authentication, and built with a
+              friend management system and live leaderboards to track player stats.
+            </p>
+          </div>
+          <div class="proj-footer">
+            <div class="tech-stack">
+              <span class="tech-badge">NestJS</span>
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">OAuth</span>
+              <span class="tech-badge">2FA</span>
+              <span class="tech-badge">WebSockets</span>
+            </div>
+            <a href="#" class="proj-link"><i class="bi bi-arrow-up-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Log Analyzer CLI -->
+        <div class="project-card reveal reveal-d3">
+          <div class="project-visual pv-log">
+            <svg class="pv-svg" viewBox="0 0 400 175" fill="none">
+              <line x1="60" y1="55"  x2="260" y2="55"  stroke="#a78bfa" stroke-width="2" opacity=".3"/>
+              <line x1="60" y1="80"  x2="320" y2="80"  stroke="#a78bfa" stroke-width="2" opacity=".3"/>
+              <line x1="60" y1="105" x2="220" y2="105" stroke="#a78bfa" stroke-width="2" opacity=".3"/>
+              <line x1="60" y1="130" x2="280" y2="130" stroke="#a78bfa" stroke-width="2" opacity=".3"/>
+            </svg>
+            <i class="bi bi-terminal-fill pv-icon"></i>
+          </div>
+          <div class="proj-body">
+            <div class="proj-num">06 / 08</div>
+            <h3 class="proj-title">Log Analyzer CLI</h3>
+            <p class="proj-desc">
+              A command-line tool that reads and analyzes application logs, built with
+              Picocli. Uses the Strategy Pattern to generate reports in JSON, Markdown,
+              and console formats, and processes logs efficiently with Java Streams,
+              Regex, and Jackson.
+            </p>
+          </div>
+          <div class="proj-footer">
+            <div class="tech-stack">
+              <span class="tech-badge">Java</span>
+              <span class="tech-badge">Picocli</span>
+              <span class="tech-badge">Regex</span>
+              <span class="tech-badge">Jackson</span>
+              <span class="tech-badge">Streams</span>
+            </div>
+            <a href="#" class="proj-link"><i class="bi bi-arrow-up-right"></i></a>
+          </div>
+        </div>
+
+        <!-- DevOps Infrastructure -->
+        <div class="project-card reveal reveal-d1">
+          <div class="project-visual pv-devops">
+            <svg class="pv-svg" viewBox="0 0 400 175" fill="none">
+              <rect x="60"  y="40"  width="90" height="50" rx="6" stroke="#a78bfa" stroke-width=".7" opacity=".35"/>
+              <rect x="190" y="30"  width="90" height="50" rx="6" stroke="#a78bfa" stroke-width=".7" opacity=".35"/>
+              <rect x="120" y="105" width="90" height="50" rx="6" stroke="#a78bfa" stroke-width=".7" opacity=".3"/>
+              <line x1="120" y1="90" x2="150" y2="105" stroke="#a78bfa" stroke-width=".6" opacity=".22"/>
+              <line x1="230" y1="80" x2="190" y2="105" stroke="#a78bfa" stroke-width=".6" opacity=".22"/>
+            </svg>
+            <i class="bi bi-hdd-stack-fill pv-icon"></i>
+          </div>
+          <div class="proj-body">
+            <div class="proj-num">07 / 08</div>
+            <h3 class="proj-title">DevOps Infrastructure</h3>
+            <p class="proj-desc">
+              A multi-container infrastructure built with Docker and Docker Compose,
+              using NGINX as a reverse proxy for WordPress and MariaDB containers.
+              Configured with persistent storage and secure networking between containers.
+            </p>
+          </div>
+          <div class="proj-footer">
+            <div class="tech-stack">
+              <span class="tech-badge">Docker</span>
+              <span class="tech-badge">Docker Compose</span>
+              <span class="tech-badge">NGINX</span>
+              <span class="tech-badge">MariaDB</span>
+              <span class="tech-badge">WordPress</span>
+            </div>
+            <a href="#" class="proj-link"><i class="bi bi-arrow-up-right"></i></a>
+          </div>
+        </div>
+
+        <!-- More projects teaser -->
+        <div class="project-card reveal reveal-d2" style="border-style:dashed; background:rgba(30,21,69,.12);">
+          <div class="project-visual pv-more">
+            <i class="bi bi-plus-circle pv-icon" style="opacity:.28;"></i>
+          </div>
+          <div class="proj-body">
+            <div class="proj-num" style="opacity:.4;">08 / 08</div>
+            <h3 class="proj-title" style="opacity:.65;">More in progress</h3>
+            <p class="proj-desc" style="opacity:.5;">
+              New projects currently in the works, including backend systems and
+              open-source contributions. Details coming soon as they're finished.
+            </p>
           </div>
         </div>
 
